@@ -1,92 +1,62 @@
-@use 'variables' as *;
+@use "variables" as * ;
 
-// mixins to take care of repeated patterns/styling.
-@mixin set-font($size: 1em, $line-height: normal, $font: $fonts-body) {
-  font-family: $font;
-  font-size: $size;
-  line-height: $line-height;
+
+
+
+@mixin set-text-style($size: $fs-300, $font:$ff-primary, $color: $clr-black){
+    font-size: $size;
+    font-family: $font;
+    color: $color;
 }
 
-@mixin set-flex($direction: row, $wrap: wrap) {
-  display: flex;
-  flex-flow: $direction $wrap;
-}
-
-@mixin uppercase($color: $text-light) {
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: $color;
-}
-
-@mixin divider($color: $accent1) {
-  border-top: 1px solid $color;
-  margin-top: 1em;
-  padding-top: 1.5em;
-}
-
-// these styles here should describe how the atoms (elements) should appear most of the time.
-// They can be overridden at the molecule (block) as necessary
-
-h2,
-h3,
-h4 {
-  font-family: $fonts-headline;
-  margin: 0;
-  color: $accent2;
-}
-
-h1 {
-  font-size: 1.5rem;
-  margin-bottom: 1em;
-  padding: 0.5em 1em;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 3em;
-  line-height: 1em;
-}
-
-h3 {
-  font-size: 1.8em;
-  font-weight: bold;
-  line-height: 1em;
-}
-
-h4 {
-  font-size: 1.5em;
-  font-weight: 200; /* Thin */
-  letter-spacing: 1px;
-  line-height: 1em;
-  margin: 0.5em 0;
-}
-
-p {
-  @include set-font(1em, 1.5em);
-  padding: 0.5em 0;
-  margin: 0;
-}
-
-a {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-  color: $text-light;
-  // text-decoration: none;
-  transition: border-color 0.2s ease-in-out;
-}
-
-a:hover {
-  color: #E49869;
-  border-color: #E49869;
-}
-
-/* MEDIUM SCREEN 64em is also 1028px (if basefont is 16px) */
-@media only screen and (min-width: 40em) {
-
-}
-
-/*LARGE SCREEN 64em is also 1028px (if basefont is 16px) */
-@media only screen and (min-width: 64rem) {
-    h2 {
-      font-size: 4em;
+@mixin set-logo($loc){
+    &::#{$loc}{
+        display: block;
+        content: url(../images/zen-garden.png);
+        zoom: 13%;
+        position: absolute;
+        top: 0;
+        z-index: 10000;
+        }
     }
+
+
+h1,h2,h3,p{
+    font-family:$ff-primary;
+    margin: 0;
+}
+
+
+
+h1{
+    @include set-text-style($fs-500);
+    color: $clr-white !important;
+    padding-top: 8rem;
+    font-weight: $fw-700;
+}
+
+h2{
+    @include set-text-style($fs-400);
+    color: $clr-white !important;
+    font-weight: $fw-300;
+}
+
+h3{
+    @include set-text-style($fs-400);
+
+}
+
+p{
+    @include set-text-style($fs-300, $clr-white);
+
+}
+
+a:hover{
+    color: $clr-white;
+
+}
+
+
+[role="banner"]:first-child{
+    @include set-logo(before);
 }

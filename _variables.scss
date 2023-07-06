@@ -1,11 +1,44 @@
-// IMPORT ZEN PROJECT FONT
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&family=Signika+Negative&display=swap');
 
-$fonts-headline: 'Oswald', sans-serif;
-$fonts-body: 'Oswald', sans-serif;
-$background-color: #482D27;
-$primary: #573A35;
-$accent1: #482D27;
-$accent2: #E49869;
-$text-light: #FFFFFF;
-$link-color-alt: #5a2504fa;
+// added some new color
+$gap: 15px;
+$background: rgba(31, 92, 108, 1) ;
+$color1: #FDA085;
+$color1g: #F6D365;
+$color2: #BFF098;
+$color2g: #6FD6FF;
+$color3: #EA8D8D;
+$color3g: #A890FE;
+$color4: #D8B5FF;
+$color4g: #1EAE98;
+$color5: #C6EA8D;
+$color5g: #FE90AF;
+
+$chinese-red: rgba(156, 51, 29, 1);
+$fulvous: rgba(225, 137, 24, 1);
+$dark-red: rgba(137, 28, 15, 1);
+$desert-sand: rgba(229, 205, 183, 1);
+$champagne-pink: rgba(244, 222, 208, 1);
+
+// project selected colors
+$clr-primary: #1F5C6C;
+$clr-gray: #F0F0F0;
+$clr-white: #FBFBFB;
+$clr-black: #000000;
+
+// font family
+$ff-primary: "Barlow Semi Condensed", sans-serif;
+$ff-secondary: 'Dynalight', cursive;
+$ff-primary2: 'Signika Negative', sans-serif;
+
+// font weight
+$fw-400: 500;
+$fw-300: 300;
+$fw-700: 600;
+$fw-100: 100;
+// font size
+$fs-300: 1rem;
+$fs-400: 1.5rem;
+$fs-500: 2rem;
+$fs-100: 0.8325rem
+

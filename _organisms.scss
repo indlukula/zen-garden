@@ -1,35 +1,186 @@
-// .intro {
-//   padding: 4%;
-// }
+@use "variables" as *;
+@use "atoms";
+@use "molecules";
 
-/* MAIN SECTION STYLES */
-.main {
-  width: 280px;
-  margin: .5rem;
+
+@mixin set-position($position, $top){
+    position: $position;
+    top: $top;
+
 }
 
-// .sidebar {
-//   width: 280px;
-//   margin: .5rem
-// }
-
-/* MEDIUM SCREEN 64em is also 1028px (if basefont is 16px) */
-@media only screen and (min-width: 40em) {
-  /* MAIN SECTION STYLES */
-  .main {
-    width: auto;
-    margin: .5rem;
-  }
-
-  .sidebar {
-    width: auto;
-    margin: .5rem
-  }
+@mixin set-background-image(){
+    background-image: url(../images/banner5.jpg);
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-size: cover;
 }
 
-/*LARGE SCREEN 64em is also 1028px (if basefont is 16px) */
-@media only screen and (min-width: 64rem) {
-    h2 {
-      font-size: 4em;
+
+.page-wrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: .5rem;
+    
+
+
+    .intro{
+        order: 1;
+        grid-column: 1 / -1;
+        grid-row: 1/2;
+        background-color: $champagne-pink;
+        @include set-background-image();
+        opacity: 0.75;
+        padding: 0 2rem 5rem 2rem;
+        border-radius: 10px;
     }
+
+    .main{
+        order: 3;
+        grid-column: 1/ 2;
+        grid-row: 2/3;
+        border-radius: 10px;
+
+
+    }
+
+    .sidebar{
+        order: 2;
+        grid-column:2/-1;
+        grid-row: 2/3;
+        background-color: $clr-white;
+        @include set-background-image();
+        opacity: .75;
+        display: block;
+        position: sticky;
+        top: 0;
+        border-radius: 10px;
+        z-index: 10;
+
+
+
+        .wrapper{
+            box-sizing: border-box;
+            @include molecules.set-Flex(column);
+            justify-content: space-evenly;
+            gap: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            .design-selection{
+                display: flex;
+                flex-direction: column;
+                padding: 0 2rem;
+
+
+
+                .select{
+                    font-size: $fs-400 !important;
+                    // margin: 1rem;
+                    display: block;
+                    margin: 1rem 0;
+
+
+                }
+
+                
+                ul{
+
+                    @include molecules.set-Flex(column);
+                    justify-content: space-evenly;
+                    list-style-type: none;
+
+
+                    li {
+                        padding: .25rem;
+
+                        a{
+                            text-decoration: none;
+
+                    }
+
+                    }
+
+                }
+
+
+            }
+
+            .design-archives{
+                @include molecules.set-Flex(column);
+                padding: 0 2rem;
+
+                .archives{
+                    font-size: $fs-400 !important;
+                    margin-bottom: 1rem;
+                }
+
+            
+                ul{
+                    @include molecules.set-Flex(column);
+                    justify-content: space-evenly;
+                    list-style-type: none;
+
+                    li {
+                        padding: .25rem;
+
+                        a{
+                            text-decoration: none;
+                    }
+
+                    }
+
+
+                }
+
+
+            }
+
+            .zen-resources{
+                @include molecules.set-Flex(column);
+                padding: 0 2rem;
+
+                .resources{
+                    font-size: $fs-400 !important;
+                    margin-bottom: 1rem;
+
+                }
+
+              
+                ul{
+                    @include molecules.set-Flex(column);
+                    justify-content: space-evenly;
+                    list-style: none;
+
+                    li {
+                        padding: .25rem;
+                        margin-bottom: 1px;
+
+
+                        a{
+                            text-decoration: none;
+
+                    }
+
+                }  
+
+
+            }
+        }
+
+
+    }
+
+
+}   
+
+
+
 }
+
+
+
+
+
