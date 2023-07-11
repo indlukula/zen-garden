@@ -8,9 +8,11 @@ h1 {
   font-size: 4rem;
   font-family: "Barlow Semi Condensed", sans-serif;
   color: rgb(65, 25, 4);
-  color: rgb(84, 80, 77) !important;
-  padding-top: 8rem;
+  color: #fff !important;
+  padding-top: 1rem;
   font-weight: 600;
+  display: inline;
+  justify-self: center;
 }
 
 h2 {
@@ -38,16 +40,21 @@ a:hover {
   color: #f80303;
 }
 
-header {
-  display: flex;
-  align-items: center;
-  position: sticky;
+.intro {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+    'header'
+
+}
+.intro > header {
+  grid-area: header;
+  background-color: transparent;
+  padding: 30px;
+  text-align: left;
+  font-size: 35px;
   
-  top: 0;
-  left: 0;
-  width: 100%;
- 
-  padding: 10px;
 }
 header img {
   width: 15%;
@@ -90,7 +97,7 @@ header::before {
  
   font-size: 0.8325rem;
   font-family: "Barlow Semi Condensed", sans-serif;
-  color:rgb(65, 25, 4)
+  color:#fff;
    
 }
 .summary p:nth-of-type(1) {
@@ -213,19 +220,6 @@ header::before {
   text-align: justify;
 }
 
-.main .footer {
-  display: inline-block;
-  grid-column: 1/-1;
-  grid-row: 5/-1;
-  border-radius: 10px;
-  background-image: url(images/banner5.jpg);
-  background-attachment: fixed;
-  background-blend-mode: multiply;
-  background-color: transparent;
-  opacity: 100%;
-  background-size: cover;
-}
-
 
 .page-wrapper {
   display: grid;
@@ -246,7 +240,7 @@ header::before {
   opacity: 90%;
   padding: 0 2rem 5rem 2rem;
   border-radius: 10px;
-  justify-items: right;
+  justify-items: left;
 }
 .page-wrapper .main {
   order: 3;
@@ -356,16 +350,6 @@ header::before {
 .page-wrapper {
   max-width: 100%;
   margin: auto;
-}
-
-.sticky {
-  position: fixed;
-  top: 0%;
-  width: 100%;
-}
-
-.sticky + .page-wrapper {
-  padding: 102px;
 }
 
 
